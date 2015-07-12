@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="puyo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sora04.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xio-Q0-RGj">
+                                <rect key="frame" x="0.0" y="-31" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grass.png" translatesAutoresizingMaskIntoConstraints="NO" id="IEi-cQ-R5n">
+                                <rect key="frame" x="0.0" y="304" width="405" height="244"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree2.png" translatesAutoresizingMaskIntoConstraints="NO" id="mTx-Xw-U94">
+                                <rect key="frame" x="-143" y="78" width="412" height="412"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grass.png" translatesAutoresizingMaskIntoConstraints="NO" id="9s2-Pk-FS9">
+                                <rect key="frame" x="0.0" y="367" width="405" height="244"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHz-RI-MX5">
+                                <rect key="frame" x="70" y="460" width="180" height="58"/>
+                                <state key="normal" backgroundImage="score3.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Dv0-xG-bCm" kind="presentation" identifier="ScoreSceneViewSegue" modalTransitionStyle="partialCurl" id="MvN-Jm-sNn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2g-CL-GPG">
+                                <rect key="frame" x="45" y="367" width="230" height="75"/>
+                                <state key="normal" backgroundImage="start3.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="n1c-Sa-aMi" kind="presentation" identifier="GameSceneViewSegue" modalTransitionStyle="partialCurl" id="bUG-wE-gHY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="agM-jN-Qut">
+                                <rect key="frame" x="94" y="184" width="133" height="120"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="243" y="302"/>
+        </scene>
+        <!--ScoreViewController-->
+        <scene sceneID="MmB-L2-JPv">
+            <objects>
+                <viewController title="ScoreViewController" id="Dv0-xG-bCm" customClass="ScoreViewController" customModule="puyo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hCm-l9-4TP"/>
+                        <viewControllerLayoutGuide type="bottom" id="gvg-mS-Q9R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TRe-rv-ZoB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sora04.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uPF-Lt-coG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grass.png" translatesAutoresizingMaskIntoConstraints="NO" id="kmo-Ki-vjC">
+                                <rect key="frame" x="-117" y="418" width="437" height="221"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grass.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tyu-mg-X36">
+                                <rect key="frame" x="0.0" y="357" width="433" height="238"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qog-mn-SF0">
+                                <rect key="frame" x="16" y="5" width="39" height="30"/>
+                                <state key="normal" title="home">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="Dv0-xG-bCm" eventType="touchUpInside" id="9E1-pW-CcR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Mr-E9-1QN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="243" y="1001"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="ki3-PD-l42">
+            <objects>
+                <viewController id="n1c-Sa-aMi" customClass="GameViewController" customModule="puyo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tDu-iw-6u0"/>
+                        <viewControllerLayoutGuide type="bottom" id="nFt-mw-6bE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b5C-aY-njY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sora04.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3ZG-vK-Wce">
+                                <rect key="frame" x="0.0" y="-33" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grass.png" translatesAutoresizingMaskIntoConstraints="NO" id="njC-ML-Omv">
+                                <rect key="frame" x="0.0" y="299" width="405" height="244"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grass.png" translatesAutoresizingMaskIntoConstraints="NO" id="DzO-VG-YCC">
+                                <rect key="frame" x="0.0" y="385" width="405" height="244"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OZ-hG-5Q3">
+                                <rect key="frame" x="16" y="13" width="41" height="30"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="n1c-Sa-aMi" eventType="touchUpInside" id="jmw-1V-ugE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnF-4H-wgx">
+                                <rect key="frame" x="0.0" y="51" width="320" height="517"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tap:" destination="n1c-Sa-aMi" eventType="touchUpInside" id="qOw-mH-t8e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EnT-Dl-a3I"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epo-c0-J38" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624" y="302"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Zbm-Ia-nIs">
+            <objects>
+                <viewController id="cF2-7R-Th1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="za7-XW-PbG"/>
+                        <viewControllerLayoutGuide type="bottom" id="whA-ub-EFi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Qc-pj-9pW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sora04.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YOO-Kk-LYU">
+                                <rect key="frame" x="0.0" y="-25" width="326" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grass.png" translatesAutoresizingMaskIntoConstraints="NO" id="fRM-f3-xtc">
+                                <rect key="frame" x="-85" y="304" width="405" height="244"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bord.png" translatesAutoresizingMaskIntoConstraints="NO" id="HSe-yC-yxQ">
+                                <rect key="frame" x="42" y="222" width="242" height="281"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grass.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkj-f2-RAu">
+                                <rect key="frame" x="0.0" y="392" width="405" height="244"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bord2.png" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-lz-H8I">
+                                <rect key="frame" x="31" y="145" width="258" height="278"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xda-mb-CYI">
+                                <rect key="frame" x="56" y="159" width="209" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhu-Lc-aMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="302"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bord.png" width="382" height="380"/>
+        <image name="bord2.png" width="372" height="328"/>
+        <image name="grass.png" width="450" height="131"/>
+        <image name="score3.png" width="230" height="75"/>
+        <image name="sora04.jpg" width="257" height="170"/>
+        <image name="start3.png" width="230" height="75"/>
+        <image name="tree2.png" width="535" height="721"/>
+    </resources>
+</document>
