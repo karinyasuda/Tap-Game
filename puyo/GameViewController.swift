@@ -15,8 +15,8 @@ class GameViewController:UIViewController{
     var enemy2ImageView:UIImageView!
     var positionx:CGFloat = 320
     var positiony:CGFloat = 100
-    var a:CGFloat = 1
-    var b:CGFloat = 0
+    var a:CGFloat = 100
+    var b:CGFloat = 1
     var w:CGFloat = 0
     var timer : NSTimer!
     
@@ -63,10 +63,16 @@ class GameViewController:UIViewController{
     func transfer(timer : NSTimer){
         println("移動！")
         
-        w = +1
+        
+        self.move2()
   
         
         self.move()
+        
+        
+        self.create()
+        
+        
     }
     @IBAction func Tap(sender: UIButton) {
         
@@ -81,37 +87,25 @@ class GameViewController:UIViewController{
         var enemy2:UIImageView = enemy2ImageView
         
         
-        positionx = positionx-1.0
+        positionx = positionx-3.0
         
         
         enemy1.frame = ( CGRectMake(positionx,positiony+200, 50, 50))
         enemy2.frame = ( CGRectMake(positionx, positiony, 50, 50))
    
-       
+    }
+    func move2(){
+        println("落ちる〜〜")
+        var mainImage: UIImageView = mainImageView
         
+        b = b+5.0
         
-        
-//        
-//        enemy1ImageView = UIImageView(frame: CGRectMake(positionx,positiony+50, 50, 50))
-//        let enemy1Image = UIImage(named: "puyopuyo1.png")
-//        enemy1ImageView.image = enemy1Image
-//        //enemy1ImageView.center = CGPointMake(positionx,positiony)
-//        //            self.view.center
-//        
-//        self.view.addSubview(enemy1ImageView)
-//        
-//        
-//        
-//        enemy2ImageView = UIImageView(frame: CGRectMake(positionx, positiony, 50, 50))
-//        let enemy2Image = UIImage(named: "puyopuyo2.png")
-//        enemy2ImageView.image = enemy2Image
-//        //        enemy2ImageView.center = self.view.center
-//        //            CGPointMake(100,100)
-//        self.view.addSubview(enemy2ImageView)
-
-    
+        mainImage.frame = ( CGRectMake(a,b+100, 50, 50))
     
     }
+    
+    
+    func create(){}
     
 
     override func didReceiveMemoryWarning() {
