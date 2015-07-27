@@ -19,9 +19,15 @@ class GameViewController:UIViewController{
     var b:CGFloat = 1
     var w:CGFloat = 0
     var timer : NSTimer!
+    var jumptimer : NSTimer!
+    var countNum = 0
     
     
-    
+    @IBAction func TapScreen(sender: UIButton) {
+        
+        println("Tap button")
+//        var jumptimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("create:"), userInfo: nil, repeats: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +62,7 @@ class GameViewController:UIViewController{
         
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:Selector("transfer:"), userInfo: nil, repeats: true)
         
+
         
     }
 
@@ -69,15 +76,7 @@ class GameViewController:UIViewController{
         
         self.move()
         
-        
-        self.create()
-        
-        
     }
-    @IBAction func Tap(sender: UIButton) {
-        
-        
-            }
 
     
     func move(){
@@ -105,7 +104,31 @@ class GameViewController:UIViewController{
     }
     
     
-    func create(){}
+    func create(){
+        countNum++
+        
+        var mainImage: UIImageView = mainImageView
+        
+        if(countNum <= 4){
+            
+            
+             b = b-3.0
+            
+            mainImage.frame = (CGRectMake(a, b+100, 50, 50))
+            
+            
+        }
+        else if (countNum <= 8){
+            
+            
+            b = b+3.0
+            
+            mainImage.frame = (CGRectMake(a, b+100, 50, 50))
+        }
+        else{
+            
+            mainImage.frame = ( CGRectMake(a,b+100, 50, 50))}
+    }
     
 
     override func didReceiveMemoryWarning() {
