@@ -10,24 +10,24 @@ import UIKit
 
 class GameViewController:UIViewController{
     
-    var mainImageView: UIImageView!
+    var mainImageView: UIImageView!//主人公表示imageview
     var enemy1ImageView:UIImageView!
-    var enemy2ImageView:UIImageView!
-    var positionx:CGFloat = 320
-    var positiony:CGFloat = 100
-    var a:CGFloat = 100
-    var b:CGFloat = 1
-    var w:CGFloat = 0
-    var timer : NSTimer!
-    var jumptimer : NSTimer!
-    var countNum = 0
+    var enemy2ImageView:UIImageView!//敵の表示imageview
+    var positionx:CGFloat = 320//敵の位置　x座標の関数
+    var positiony:CGFloat = 100//敵の位置　y座標の関数
+    var a:CGFloat = 100//主人公の位置　x座標の関数
+    var b:CGFloat = 1//主人公の位置　y座標の関数
+//    var w:CGFloat = 0　　今のところいらない関数定義
+    var timer : NSTimer!//敵と主人公３つが動くためのtimer
+    var jumptimer : NSTimer!//ボタンを押したときに上に上がるようにしたいと思って作ったtimer
+    var countNum :CGFloat = 0 //timerで増える数。
     
     
-    @IBAction func TapScreen(sender: UIButton) {
-        
-        println("Tap button")
-//        var jumptimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("create:"), userInfo: nil, repeats: true)
-    }
+//    @IBAction func TapScreen(sender: UIButton) {
+//    //ボタンをAction接続
+//        println("Tap button")
+//        
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +65,29 @@ class GameViewController:UIViewController{
 
         
     }
+    @IBAction func TapScreen(sender: UIButton) {
+        //ボタンをAction接続
+        var mainImage: UIImageView = mainImageView
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:Selector("tap"), userInfo: nil, repeats: true)
+        println("Tap button")
+        func tap (){countNum++}
+        
+        
+        if countNum >= 1{
+            if countNum <= 4{
+                b = b-3.0
+                mainImage.frame = (CGRectMake(a, b+100, 50, 50))}
+            
+            else if countNum >= 5{
+                b = b+3.0
+                mainImage.frame = (CGRectMake(a, b+100, 50, 50))}
+                
+            
+            
+        
+        }
+    }
+
 
     
     func transfer(timer : NSTimer){
@@ -75,6 +98,9 @@ class GameViewController:UIViewController{
   
         
         self.move()
+        
+//        
+//        self.create()
         
     }
 
@@ -104,32 +130,35 @@ class GameViewController:UIViewController{
     }
     
     
-    func create(){
-        countNum++
-        
-        var mainImage: UIImageView = mainImageView
-        
-        if(countNum <= 4){
-            
-            
-             b = b-3.0
-            
-            mainImage.frame = (CGRectMake(a, b+100, 50, 50))
-            
-            
-        }
-        else if (countNum <= 8){
-            
-            
-            b = b+3.0
-            
-            mainImage.frame = (CGRectMake(a, b+100, 50, 50))
-        }
-        else{
-            
-            mainImage.frame = ( CGRectMake(a,b+100, 50, 50))}
-    }
-    
+//    func create(){
+////        if (){
+////        countNum++
+//        
+//        var mainImage: UIImageView = mainImageView
+//        
+//        if(countNum <= 4){
+//            
+//            
+//             b = b-3.0
+//            
+//            mainImage.frame = (CGRectMake(a, b+100, 50, 50))
+//            
+//            
+//        }
+//        else if (countNum <= 8){
+//            
+//            
+//            b = b+3.0
+//            
+//            mainImage.frame = (CGRectMake(a, b+100, 50, 50))
+//        }
+//        else{
+//            
+//            mainImage.frame = ( CGRectMake(a,b+100, 50, 50))}
+//        }
+//    else{}
+//}
+//    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
