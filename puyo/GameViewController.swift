@@ -2,6 +2,7 @@
 //  GameViewController.swift
 //  puyo
 //
+
 //  Created by Karin on 2015/07/07.
 //  Copyright (c) 2015年 Karin. All rights reserved.
 //
@@ -15,11 +16,11 @@ class GameViewController:UIViewController{
     var enemy2ImageView:UIImageView!//敵の表示imageview
     var positionx:CGFloat = 320//敵の位置　x座標の関数
     var positiony:CGFloat = 100//敵の位置　y座標の関数
-    var a:CGFloat = 100//主人公の位置　x座標の関数
-    var b:CGFloat = 1//主人公の位置　y座標の関数
+    var a:CGFloat = 70//主人公の位置　x座標の関数
+    var b:CGFloat = 10//主人公の位置　y座標の関数
 //    var w:CGFloat = 0　　今のところいらない関数定義
     var timer : NSTimer!//敵と主人公３つが動くためのtimer
-    var jumptimer : NSTimer!//ボタンを押したときに上に上がるようにしたいと思って作ったtimer
+//    var jumptimer : NSTimer!//ボタンを押したときに上に上がるようにしたいと思って作ったtimer
     var countNum :CGFloat = 0 //timerで増える数。
     
     
@@ -32,61 +33,65 @@ class GameViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        mainImageView = UIImageView(frame: CGRectMake(a,b,50,50))
-        let mainImage = UIImage(named: "puyo2.png")
-        mainImageView.image = mainImage
-        mainImageView.center = self.view.center
-//            CGPointMake(100,100)
+        //UIimageViewを作る(x座標, y座標, width, height)
+        mainImageView = UIImageView(frame: CGRectMake(a,b,50,50))//xとyには関数が入る
+        let mainImage = UIImage(named: "puyo2.png")//puyo2というimageをmainimageとして置く
+        mainImageView.image = mainImage//mainimageviewのimageはmainimageに
+
         self.view.addSubview(mainImageView)
         
         
+        //UIimageViewを作る(x座標, y座標, width, height)
+        enemy1ImageView = UIImageView(frame: CGRectMake(positionx,positiony+50, 50, 50))//xとyには関数が入る
+        let enemy1Image = UIImage(named: "puyopuyo1.png")//puyopuyo1というimageをenemyimageとして置く
+        enemy1ImageView.image = enemy1Image//enemy1Imageviewのimageはenemy1image
         
-        enemy1ImageView = UIImageView(frame: CGRectMake(positionx,positiony+50, 50, 50))
-        let enemy1Image = UIImage(named: "puyopuyo1.png")
-        enemy1ImageView.image = enemy1Image
-        //enemy1ImageView.center = CGPointMake(positionx,positiony)
-//            self.view.center
         self.view.addSubview(enemy1ImageView)
         
         
         
-        enemy2ImageView = UIImageView(frame: CGRectMake(positionx, positiony, 50, 50))
-        let enemy2Image = UIImage(named: "puyopuyo2.png")
-        enemy2ImageView.image = enemy2Image
-//        enemy2ImageView.center = self.view.center
-        //            CGPointMake(100,100)
+        enemy2ImageView = UIImageView(frame: CGRectMake(positionx, positiony, 50, 50))//xとyには関数が入る
+        let enemy2Image = UIImage(named: "puyopuyo2.png")//puyopuyo2というimageをenemyimageとして置く
+        enemy2ImageView.image = enemy2Image//enemy2Imageviewのimageはenemy2image
+
         self.view.addSubview(enemy2ImageView)
 
         
-        
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:Selector("transfer:"), userInfo: nil, repeats: true)
+        //タイマーを作る
+        //更新のインターバル0.1s
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1,
+  
+            //そのクラスのメソッドか
+            target: self,
+            
+            //メソッド
+            selector:Selector("transfer:"),
+            userInfo: nil,
+            
+            //何回も呼び出すかどうか
+            repeats: true)
         
 
         
     }
-    @IBAction func TapScreen(sender: UIButton) {
-        //ボタンをAction接続
-        var mainImage: UIImageView = mainImageView
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:Selector("tap"), userInfo: nil, repeats: true)
-        println("Tap button")
-        func tap (){countNum++}
-        
-        
-        if countNum >= 1{
-            if countNum <= 4{
-                b = b-3.0
-                mainImage.frame = (CGRectMake(a, b+100, 50, 50))}
-            
-            else if countNum >= 5{
-                b = b+3.0
-                mainImage.frame = (CGRectMake(a, b+100, 50, 50))}
-                
-            
-            
-        
-        }
-    }
+//    @IBAction func TapScreen(sender: UIButton) {
+//        //ボタンをAction接続
+//        var mainImage: UIImageView = mainImageView
+//        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:Selector("tap"), userInfo: nil, repeats: true)
+//        println("Tap button")
+//        func tap (){countNum++}
+//        
+//        
+//        if countNum >= 1{
+//            if countNum <= 4{
+//                b = b-3.0
+//                mainImage.frame = (CGRectMake(a, b+100, 50, 50))}
+//            
+//            else if countNum >= 5{
+//                b = b+3.0
+//                mainImage.frame = (CGRectMake(a, b+100, 50, 50))}
+//        }
+//    }
 
 
     
@@ -130,7 +135,7 @@ class GameViewController:UIViewController{
     }
     
     
-//    func create(){
+//    func tap(){
 ////        if (){
 ////        countNum++
 //        
